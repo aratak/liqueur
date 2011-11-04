@@ -1,0 +1,2 @@
+module Liqueur
+end
