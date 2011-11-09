@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:aratak/wiskey.git
+  revision: f3f6e35eec3221b7276a76ecc27c0c0381d15909
+  specs:
+    wiskey (0.0.2)
+      rails (~> 3.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -88,8 +95,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
-    wiskey (0.0.2)
-      rails (~> 3.1.0)
 
 PLATFORMS
   ruby
@@ -98,4 +103,4 @@ DEPENDENCIES
   rails (= 3.1.0)
   sass
   sass-rails
-  wiskey
+  wiskey!

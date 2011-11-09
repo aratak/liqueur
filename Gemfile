@@ -3,7 +3,7 @@ source "http://rubygems.org"
 gem "rails", "3.1.0"
 gem "sass"
 gem "sass-rails"
-gem "wiskey"
+gem "wiskey", :git => "git@github.com:aratak/wiskey.git"
 
 # gem "capybara", ">= 0.4.0"
 
