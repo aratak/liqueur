@@ -6,4 +6,5 @@ module Liqueur
   end
 end
 
+require 'wiskey'
 require File.join(File.dirname(__FILE__), "/liqueur/sass_extensions")
