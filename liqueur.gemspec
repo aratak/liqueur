@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.homepage                  = "http://aratak.github.com/liqueur/"
   s.description = "CSS framework."
   s.files = `git ls-files`.split("\n")
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.add_dependency "wiskey"
   s.add_dependency "rails"         , "~> 3.1.0"
