@@ -1,0 +1,15 @@
+a {
+
+  &:visited {}
+
+  &:hover {}
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover, &:active {
+    outline: 0;
+  }
+
+}

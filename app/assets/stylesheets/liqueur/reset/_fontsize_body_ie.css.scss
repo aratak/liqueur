@@ -1,0 +1,11 @@
+// Correct text resizing oddly in IE6/7 when body font-size is set using em units
+// http://clagnut.com/blog/348/#c790
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}

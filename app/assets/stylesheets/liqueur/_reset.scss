@@ -1,2 +1,17 @@
-@import 'reset/clearfix';
+@import "reset/html5";
+@import "reset/disabling_user_zoom";
+@import "reset/font_family";
+@import "reset/fontsize_body_ie";
+@import "reset/html5";
+@import "reset/selection";
+@import "reset/tap_color";
+@import "reset/body_margin";
+@import "reset/links";
+@import "reset/typorgafy";
+@import "reset/lists";
+@import "reset/images";
+@import "reset/form";
+@import "reset/print";
+
 @import 'reset/hr';
+@import 'reset/clearfix';
