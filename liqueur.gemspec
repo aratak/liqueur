@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_dependency "wiskey", "0.0.5"
+  s.add_dependency "wiskey"
   s.add_dependency 'sass', '>= 3.1'
 end
