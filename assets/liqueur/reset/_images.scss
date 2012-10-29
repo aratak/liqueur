@@ -1,0 +1,14 @@
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+// Correct overflow not hidden in IE9
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+
