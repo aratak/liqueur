@@ -1,6 +1,11 @@
 @import "./wiskey";
 @import './liqueur';
 
-body {
-  border: 1px;
+.button {
+  padding: 1em;
+
+  border: 1px solid black;
+  @include border-radius(.5em);
+
+  @include inline-block;
 }
