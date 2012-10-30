@@ -1,8 +1,11 @@
-sass = require 'node-sass'
+spawn = require('child_process').spawn
 
 module.exports = (app)->
-  app.use sass.middleware
-    src: "#{process.cwd()}"
-    dest: "#{process.cwd()}/public"
-    debug: true
+  sass = spawn 'sass', ['--scss', '--line-numbers', '--no-cache', '--style', 'expanded', '--watch', 'assets/stylesheets:public/assets']
+  sass.stdout.on 'data', (data)-> console.log "sass: #{data}"
+  sass.stderr.on 'data', (data)-> console.log "sass: #{data}"
+  sass.on 'exit', (code)-> console.log "sass: [exit] #{code}"
+
+  process.on 'exit', -> sass.kill('exit');
+
   app

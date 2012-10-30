@@ -13,3 +13,5 @@ REVISION
 lib-cov
 node_modules/
 /npm-debug.log
+/.sass-cache
+/public/assets
