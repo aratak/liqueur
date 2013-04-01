@@ -1,0 +1,19 @@
+[data-grid~=row] {
+  @include inline-block-fix;
+
+  [data-grid~=col] {
+    @include box-sizing(border-box);
+    @include inline-block;
+    vertical-align: middle;
+  }
+}
+
+@for $gridCount from 1 through 24 {
+  [data-grid~=row#{$gridCount}] {
+    @for $columnSize from 1 through $gridCount {
+      [data-grid~=col#{$columnSize}] {
+        width: $columnSize/$gridCount*100%;
+      }
+    }
+  }
+}

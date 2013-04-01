@@ -1,0 +1,5 @@
+@each $mediaType in handhelds, wide-handhelds, tablets, small-screens, wide-screens {
+  [data-media-#{$mediaType}=hide] {
+    @include respond-to(#{$mediaType}) { display: none !important; }
+  }
+}

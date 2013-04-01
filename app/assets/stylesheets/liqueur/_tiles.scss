@@ -1,0 +1,41 @@
+[data-tiles] {
+
+  $tiles-rows-count: 20 !default;
+  $tiles-columns-count: 3 !default;
+  $tiles-width: 30% !default;
+  $tiles-height: 100px !default;
+
+  $tiles-margin-horizontal: (100% - ($tiles-columns-count * $tiles-width)) / 6 !default;
+  $tiles-margin-vertical: 10px !default;
+
+  $tiles-margin-left: $tiles-margin-horizontal !default;
+  $tiles-margin-right: $tiles-margin-horizontal !default;
+  $tiles-margin-top: $tiles-margin-vertical !default;
+  $tiles-margin-bottom: $tiles-margin-vertical !default;
+
+
+  @for $i from 1 through $tiles-rows-count {
+    &[data-tiles="#{$i}"] { height: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * $i}; }
+  }
+
+  @for $i from 1 through $tiles-columns-count {
+    [data-col="#{$i}"] { left: #{($tiles-margin-left + $tiles-width + $tiles-margin-right) * ($i - 1) + $tiles-margin-left}; }
+  }
+
+  @for $i from 1 through $tiles-rows-count {
+    [data-row="#{$i}"] { top: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * ($i - 1) + $tiles-margin-top};}
+  }
+
+  @for $i from 1 through $tiles-columns-count {
+    [data-sizex="#{$i}"] { width: #{($tiles-width * $i) + (($tiles-margin-right + $tiles-margin-left) * ($i - 1))}; }
+  }
+
+  @for $i from 1 through $tiles-rows-count {
+    [data-sizey="#{$i}"] { height: #{($tiles-height * $i) + (($tiles-margin-bottom + $tiles-margin-top) * ($i - 1))}; }
+  }
+
+  @for $i from 1 through $tiles-rows-count {
+    [data-sizey="#{$i}"] { height: #{($tiles-height * $i) + (($tiles-margin-bottom + $tiles-margin-top) * ($i - 1))}; }
+  }
+
+}
