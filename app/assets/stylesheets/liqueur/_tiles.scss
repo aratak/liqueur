@@ -1,5 +1,4 @@
 [data-tiles] {
-
   $tiles-rows-count: 20 !default;
   $tiles-columns-count: 3 !default;
   $tiles-width: 30% !default;
@@ -13,9 +12,21 @@
   $tiles-margin-top: $tiles-margin-vertical !default;
   $tiles-margin-bottom: $tiles-margin-vertical !default;
 
+  margin-top: -$tiles-margin-top;
+  margin-bottom: -$tiles-margin-bottom;
+  margin-left: -$tiles-margin-left;
+  margin-right: -$tiles-margin-right;
+  width: 100% + $tiles-margin-left + $tiles-margin-right;
 
   @for $i from 1 through $tiles-rows-count {
-    &[data-tiles="#{$i}"] { height: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * $i}; }
+    &[data-tiles="#{$i}"] {
+      min-height: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * $i + $tiles-margin-top + $tiles-margin-bottom};
+    }
+  }
+
+  > [data-col][data-row] {
+    @include box-sizing(border-box);
+    padding: .5em;
   }
 
   @for $i from 1 through $tiles-columns-count {
@@ -23,7 +34,9 @@
   }
 
   @for $i from 1 through $tiles-rows-count {
-    [data-row="#{$i}"] { top: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * ($i - 1) + $tiles-margin-top};}
+    [data-row="#{$i}"] {
+      top: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * ($i - 1) + $tiles-margin-top};
+    }
   }
 
   @for $i from 1 through $tiles-columns-count {

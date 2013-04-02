@@ -4,7 +4,7 @@
   [data-grid~=col] {
     @include box-sizing(border-box);
     @include inline-block;
-    vertical-align: middle;
+    vertical-align: top;
   }
 }
 
