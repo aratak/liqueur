@@ -4,6 +4,8 @@
   $tiles-width: 30% !default;
   $tiles-height: 100px !default;
 
+  $tiles-padding: .5em;
+
   $tiles-margin-horizontal: (100% - ($tiles-columns-count * $tiles-width)) / 6 !default;
   $tiles-margin-vertical: 10px !default;
 
@@ -12,11 +14,14 @@
   $tiles-margin-top: $tiles-margin-vertical !default;
   $tiles-margin-bottom: $tiles-margin-vertical !default;
 
+  position: relative;
+  list-style: none;
   margin-top: -$tiles-margin-top;
   margin-bottom: -$tiles-margin-bottom;
   margin-left: -$tiles-margin-left;
   margin-right: -$tiles-margin-right;
   width: 100% + $tiles-margin-left + $tiles-margin-right;
+  padding: 0;
 
   @for $i from 1 through $tiles-rows-count {
     &[data-tiles="#{$i}"] {
@@ -26,7 +31,20 @@
 
   > [data-col][data-row] {
     @include box-sizing(border-box);
-    padding: .5em;
+    padding: $tiles-padding;
+    position: absolute;
+    overflow: hidden;
+
+    > a {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: $tiles-padding;
+    }
+
   }
 
   @for $i from 1 through $tiles-columns-count {
