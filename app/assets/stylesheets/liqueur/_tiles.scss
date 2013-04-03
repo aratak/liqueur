@@ -1,4 +1,4 @@
-[data-tiles] {
+[data-tiles-wrapper] {
   $tiles-rows-count: 20 !default;
   $tiles-columns-count: 3 !default;
   $tiles-width: 30% !default;
@@ -14,59 +14,65 @@
   $tiles-margin-top: $tiles-margin-vertical !default;
   $tiles-margin-bottom: $tiles-margin-vertical !default;
 
-  position: relative;
-  list-style: none;
-  margin-top: -$tiles-margin-top;
-  margin-bottom: -$tiles-margin-bottom;
-  margin-left: -$tiles-margin-left;
-  margin-right: -$tiles-margin-right;
-  width: 100% + $tiles-margin-left + $tiles-margin-right;
-  padding: 0;
+  width: 100% / $tiles-columns-count;
 
-  @for $i from 1 through $tiles-rows-count {
-    &[data-tiles="#{$i}"] {
-      min-height: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * $i + $tiles-margin-top + $tiles-margin-bottom};
+  [data-tiles] {
+    position: relative;
+    list-style: none;
+    margin-top: -$tiles-margin-top;
+    margin-bottom: -$tiles-margin-bottom;
+    margin-left: -$tiles-margin-left;
+    margin-right: -$tiles-margin-right;
+    width: (100% * $tiles-columns-count);
+    padding: 0;
+
+    @for $i from 1 through $tiles-rows-count {
+      &[data-tiles="#{$i}"] {
+        min-height: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * $i + $tiles-margin-top + $tiles-margin-bottom};
+      }
     }
-  }
 
-  > [data-col][data-row] {
-    @include box-sizing(border-box);
-    padding: $tiles-padding;
-    position: absolute;
-    overflow: hidden;
-
-    > a {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+    > [data-col][data-row] {
+      @include box-sizing(border-box);
       padding: $tiles-padding;
+      position: absolute;
+      overflow: hidden;
+
+      > a {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: $tiles-padding;
+        @include box-sizing(border-box);
+      }
+
     }
 
-  }
-
-  @for $i from 1 through $tiles-columns-count {
-    [data-col="#{$i}"] { left: #{($tiles-margin-left + $tiles-width + $tiles-margin-right) * ($i - 1) + $tiles-margin-left}; }
-  }
-
-  @for $i from 1 through $tiles-rows-count {
-    [data-row="#{$i}"] {
-      top: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * ($i - 1) + $tiles-margin-top};
+    @for $i from 1 through $tiles-columns-count {
+      [data-col="#{$i}"] { left: #{($tiles-margin-left + $tiles-width + $tiles-margin-right) * ($i - 1) + $tiles-margin-left}; }
     }
-  }
 
-  @for $i from 1 through $tiles-columns-count {
-    [data-sizex="#{$i}"] { width: #{($tiles-width * $i) + (($tiles-margin-right + $tiles-margin-left) * ($i - 1))}; }
-  }
+    @for $i from 1 through $tiles-rows-count {
+      [data-row="#{$i}"] {
+        top: #{($tiles-margin-top + $tiles-height + $tiles-margin-bottom) * ($i - 1) + $tiles-margin-top};
+      }
+    }
 
-  @for $i from 1 through $tiles-rows-count {
-    [data-sizey="#{$i}"] { height: #{($tiles-height * $i) + (($tiles-margin-bottom + $tiles-margin-top) * ($i - 1))}; }
-  }
+    @for $i from 1 through $tiles-columns-count {
+      [data-sizex="#{$i}"] { width: #{($tiles-width * $i) + (($tiles-margin-right + $tiles-margin-left) * ($i - 1))}; }
+    }
 
-  @for $i from 1 through $tiles-rows-count {
-    [data-sizey="#{$i}"] { height: #{($tiles-height * $i) + (($tiles-margin-bottom + $tiles-margin-top) * ($i - 1))}; }
+    @for $i from 1 through $tiles-rows-count {
+      [data-sizey="#{$i}"] { height: #{($tiles-height * $i) + (($tiles-margin-bottom + $tiles-margin-top) * ($i - 1))}; }
+    }
+
+    @for $i from 1 through $tiles-rows-count {
+      [data-sizey="#{$i}"] { height: #{($tiles-height * $i) + (($tiles-margin-bottom + $tiles-margin-top) * ($i - 1))}; }
+    }
+
   }
 
 }
