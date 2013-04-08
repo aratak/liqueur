@@ -1,5 +1,9 @@
 a {
 
+  &.with-image {
+    text-decoration: none;
+  }
+
   &:visited {}
 
   &:hover {}
