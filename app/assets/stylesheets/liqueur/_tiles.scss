@@ -6,7 +6,7 @@
 
   $tiles-padding: .5em !default;
 
-  $tiles-margin-horizontal: (100% - ($tiles-columns-count * $tiles-width)) / 6 !default;
+  $tiles-margin-horizontal: (100% - ($tiles-columns-count * $tiles-width)) / ($tiles-columns-count*2) !default;
   $tiles-margin-vertical: 10px !default;
 
   $tiles-margin-left: $tiles-margin-horizontal !default;
