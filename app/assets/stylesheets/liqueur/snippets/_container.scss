@@ -20,3 +20,7 @@ $snippet-container-padding: 1em 0;
   @include respond-to(small-screens)      { width: $snippet-container-small-screens-width; }
   @include respond-to(wide-screens)       { width: $snippet-container-wide-screens-width; }
 }
+
+ul.container {
+  list-style: none;
+}

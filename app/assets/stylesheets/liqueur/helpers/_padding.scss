@@ -1,0 +1,6 @@
+$helper-padding: 1em;
+
+.padding {
+  padding: $helper-padding;
+  @include box-sizing(border-box);
+}
