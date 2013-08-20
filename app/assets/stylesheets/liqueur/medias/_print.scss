@@ -1,0 +1,17 @@
+[data-media=screen] {
+  @media screen {
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+[data-media=print] {
+  @media screen {
+    display: none;
+  }
+
+  @media print {
+  }
+}

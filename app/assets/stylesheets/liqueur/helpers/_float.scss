@@ -1,0 +1,25 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pull-clear {
+  clear: both;
+}
+
+.pull-clear-left {
+  clear: left;
+}
+
+.pull-clear-right {
+  clear: right;
+}

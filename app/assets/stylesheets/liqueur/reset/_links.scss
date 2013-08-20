@@ -1,0 +1,19 @@
+a {
+
+  &.with-image {
+    text-decoration: none;
+  }
+
+  &:visited {}
+
+  &:hover {}
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover, &:active {
+    outline: 0;
+  }
+
+}
