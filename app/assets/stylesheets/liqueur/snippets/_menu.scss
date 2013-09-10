@@ -1,0 +1,30 @@
+@import 'wiskey/css3/inline-block';
+
+ul.menu {
+  padding: 0;
+  margin: 0;
+
+  > li {
+    list-style: none;
+    display: inline;
+
+    a {
+      padding: .5em;
+      @include inline-block;
+    }
+
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      a {
+        padding-right: 0;
+      }
+    }
+
+
+  }
+}
