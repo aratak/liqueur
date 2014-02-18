@@ -15,11 +15,11 @@ $grid-col-padding: .5em;
 @for $gridCount from 1 through $grid-col-count {
   [data-grid~=row#{$gridCount}] {
     @for $columnSize from 1 through $gridCount {
-      [data-grid~=col#{$columnSize}] {
+      > [data-grid~=col#{$columnSize}] {
         width: $columnSize/$gridCount*100%;
       }
 
-      [data-grid~=offset#{$columnSize}] {
+      > [data-grid~=offset#{$columnSize}] {
         margin-left: $columnSize/$gridCount*100%
       }
     }
