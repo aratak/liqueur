@@ -23,3 +23,7 @@
 .pull-clear-right {
   clear: right;
 }
+
+.pull-left, .pull-right {
+  @include respond-to(handhelds, wide-handhelds)   { float: none; display: block; }
+}
